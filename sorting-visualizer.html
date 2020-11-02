@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Fonts -->
+  <!-- Trispace -->
+  <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400&display=swap" rel="stylesheet">
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/visualizer.css">
+  <title>Sorting Visualizer</title>
+</head>
+<body>
+  <nav>
+    <div class="logo">Sorting Visualizer</div>
+    <div class="menu">Select Algorithim▾</div>
+  </nav>
+  <section class="display">
+    <div class="array">
+      <div class="bar"></div>
+    </div>
+    <div class="controls">
+      <div class="size controlItem">
+        <p>small</p>
+        <input type="range" min = "4" max = "50" value = "26" class = "slider" id="sizeRange">
+        <p>large</p>
+      </div>
+      <div class="controls">
+        <div class="start"></div>
+        <div class="refresh"></div>
+      </div>
+      <div class="speed controlItem">
+        <p>slow</p>
+        <input type="range" min = "0" max = "10" value = "5" class = "slider" id="speedRange">
+        <p>fast</p>
+      </div>
+    </div>
+  </section>
+  <section class="info">
+    <ul class="algorithmLinks">
+      <li class="algo">Bubble Sort</li>
+      <li class="algo">Merge Sort</li>
+      <li class="algo">Quick Sort</li>
+      <li class="algo">Radix Sort</li>
+      <li class="algo">Selection Sort</li>
+    </ul>
+  </section>
+  <script src="javascript/app.js"></script>
+</body>
