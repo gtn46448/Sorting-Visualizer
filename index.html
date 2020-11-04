@@ -4,10 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Fonts -->
-  <!-- Trispace -->
-  <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400&display=swap" rel="stylesheet">
-  <!-- Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Roboto Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
   <!-- CSS -->
   <link rel="stylesheet" href="css/visualizer.css">
   <title>Sorting Visualizer</title>
@@ -15,37 +13,85 @@
 <body>
   <nav>
     <div class="logo">Sorting Visualizer</div>
-    <div class="menu">Select Algorithim▾</div>
   </nav>
+  <div class="mainContent">
   <section class="display">
     <div class="array">
       <div class="bar"></div>
     </div>
+    <div class="algorithmSelect">
+      <div class="expand"><div class="arrow">&nbsp;▲&nbsp;</div><div class="expandLabel">Select Algorithm</div><div class="arrow">&nbsp;▲&nbsp;</div></div>
+      <ul class="algorithmLinks">
+        <li class="algo"><span>Bubble</span>&nbsp;Sort</li>
+        <li class="algo"><span>Merge</span>&nbsp;Sort</li>
+        <li class="algo"><span>Quick</span>&nbsp;Sort</li>
+        <li class="algo"><span>Radix</span>&nbsp;Sort</li>
+        <li class="algo"><span>Selection</span>&nbsp;Sort</li>
+      </ul>
+    </div>
     <div class="controls">
       <div class="size controlItem">
         <p>small</p>
-        <input type="range" min = "4" max = "50" value = "26" class = "slider" id="sizeRange">
+        <input type="range" min = "4" max = "50" value = "50" class = "slider" id="sizeRange">
         <p>large</p>
       </div>
       <div class="controls">
         <div class="start"></div>
-        <div class="refresh"></div>
       </div>
       <div class="speed controlItem">
         <p>slow</p>
-        <input type="range" min = "0" max = "10" value = "5" class = "slider" id="speedRange">
+        <input type="range" min = "0" max = "10" value = "10" class = "slider" id="speedRange">
         <p>fast</p>
       </div>
     </div>
   </section>
   <section class="info">
-    <ul class="algorithmLinks">
-      <li class="algo">Bubble Sort</li>
-      <li class="algo">Merge Sort</li>
-      <li class="algo">Quick Sort</li>
-      <li class="algo">Radix Sort</li>
-      <li class="algo">Selection Sort</li>
-    </ul>
+    <div class="bubbleSort infoSection hidden">
+      <h1>Bubble Sort</h1>
+      <b>Pseudocode</b>
+      <div class="pseudocode">
+        <p class="bubCode0">do</p>
+        <p class="bubCode1">&nbsp;&nbsp;swapped = false</p>
+        <p class="bubCode2">&nbsp;&nbsp;for(0 to lastUnsortedElement - 1)</p>
+        <p class="bubCode3">&nbsp;&nbsp;&nbsp;&nbsp;if(elements[i] > elements[i + 1])</p>
+        <p class="bubCode4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap(elements[i], elements[i + 1])</p>
+        <p class="bubCode5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swapped = true</p>
+        <p class="bubCode6">while(swapped = true)</p>
+      </div>
+      <div class="description">
+        <p><b>Description: </b>Bubble Sort is a simple algorithm that repeatedly iterates through elements, swapping adjacent elements if they are in the wrong order.</p>
+        <p><b>Average Time Complexity: </b>O(n<sup>2</sup>)</p>
+        <p><b>Best Time Complexity: </b>O(n) when the list is already sorted, or 1 element is at an index before its sorted location.</p>
+        <p><b>Worst Time Complexity: </b>O(n<sup>2</sup>)</p>
+        <p><b>Auxilary Space: </b>O(1)</p>
+      </div>
+    </div>
+    <div class="mergeSort infoSection hidden">
+      <h1>Merge Sort</h1>
+      <b>Pseudocode</b>
+      <div class="pseudocode">
+        <p class="merCode0">function mergeSort(input[])</p>
+        <p class="merCode1">&nbsp;&nbsp;if(inputLength = 1)</p>
+        <p class="merCode2">&nbsp;&nbsp;&nbsp;&nbsp;return input</p>
+        <p class="merCode3">&nbsp;&nbsp;else</p>
+        <p class="merCode4">&nbsp;&nbsp;&nbsp;&nbsp;lSub[] = mergeSort(input[0 to mid])</p>
+        <p class="merCode5">&nbsp;&nbsp;&nbsp;&nbsp;rSub[] = mergeSort(input[mid to end]</p>
+        <p class="merCode6">&nbsp;&nbsp;&nbsp;&nbsp;for(0 to inputLength)</p>
+        <p class="merCode7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(lSub[0] < rSub[0])</p>
+        <p class="merCode8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add lSub[0] to output</p>
+        <p class="merCode9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</p>
+        <p class="merCode10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add rSub[0] to output</p>
+        <p class="merCode11">&nbsp;&nbsp;&nbsp;&nbsp;return output</p>
+      </div>
+      <div class="description">
+        <p><b>Description: </b>Merge Sort is a divide and conquer algorithm that divides an array into 2 halves, calls itself on each half, then merges the halves back together.</p>
+        <p><b>Average Time Complexity: </b>O(nlogn)</p>
+        <p><b>Best Time Complexity: </b>O(nlogn)</p>
+        <p><b>Worst Time Complexity: </b>O(nlogn)</p>
+        <p><b>Auxilary Space: </b>O(n)</p>
+      </div>
+    </div>
   </section>
+  </div>
   <script src="javascript/app.js"></script>
 </body>
