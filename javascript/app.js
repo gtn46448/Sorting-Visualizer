@@ -83,13 +83,13 @@ const algSelected = () => {
             document.querySelector('.mergeSort').classList.remove('hidden');
             break;
         case "<span>Quick</span>&nbsp;Sort":
-            
+            document.querySelector('.quickSort').classList.remove('hidden');
             break;
         case "<span>Radix</span>&nbsp;Sort":
-            
+            document.querySelector('.radixSort').classList.remove('hidden');
             break;
         case "<span>Selection</span>&nbsp;Sort":
-            
+            document.querySelector('.selectionSort').classList.remove('hidden');
     }
 }
 
@@ -178,39 +178,52 @@ const bubbleSort = async() => {
         drawArray();
         document.querySelector('.bubCode6').style.backgroundColor = '#38a3a5';
         await sleep(speed);
-        document.querySelector('.bubCode6  ').style.backgroundColor = null;
+        document.querySelector('.bubCode6').style.backgroundColor = null;
         count++;
     } while(swapped)
     sortingComplete();
 }
 
 const selectionSort = async() => {
+    document.querySelector('.selCode0').style.backgroundColor = '#38a3a5';
+    await sleep(speed);
+    document.querySelector('.selCode0').style.backgroundColor = null;
     for(let i = 0; i < array.length - 1; i++) {
+        document.querySelector('.selCode1').style.backgroundColor = '#38a3a5';
         let minimum = array[i][0];
         let saveIndex = i;
         array[saveIndex][1] = '#d57a2a';
         drawArray();
         await sleep(speed);
+        document.querySelector('.selCode1').style.backgroundColor = null;
+        document.querySelector('.selCode2').style.backgroundColor = '#38a3a5';
+        await sleep(speed);
+        document.querySelector('.selCode2').style.backgroundColor = null;
         for(let j = i + 1; j < array.length; j++) {
             array[j][1] = '#fcfbfe'
             drawArray();
+            document.querySelector('.selCode3').style.backgroundColor = '#38a3a5';
             await sleep(speed);
+            document.querySelector('.selCode3').style.backgroundColor = null;
+            array[j][1] = '#38a3a5'
             if(array[j][0] < minimum) {
                 array[j][1] = '#d57a2a';
                 array[saveIndex][1] = '#38a3a5';
                 minimum = array[j][0];
                 saveIndex = j;
-            } else {
-                array[j][1] = '#38a3a5'
+                drawArray();
+                document.querySelector('.selCode4').style.backgroundColor = '#38a3a5';
+                await sleep(speed);
+                document.querySelector('.selCode4').style.backgroundColor = null;
             }
-            drawArray();
-            await sleep(speed);
         }
         array[saveIndex][0] = array[i][0];
         array[i][0] = minimum;
         array[saveIndex][1] = '#38a3a5'
         drawArray();
+        document.querySelector('.selCode5').style.backgroundColor = '#38a3a5';
         await sleep(speed);
+        document.querySelector('.selCode5').style.backgroundColor = null;
         array[i][1] = '#38a34c'
     }
     sortingComplete();
@@ -241,11 +254,11 @@ const mergeSortHelper = async(start, end, input) => {
         let splitIndex = Math.ceil(input.length / 2)
         let splitTrueIndex = start + splitIndex;
         for (let i = start; i < splitTrueIndex; i++) {
-            let color = Math.floor((start)*360/(array.length-1));
+            let color = Math.floor((start)*330/(array.length-1));
             array[i][1] = `hsl(${color}, 72%, 43%)`;
         }
         for (let i = splitTrueIndex; i < end; i++) {
-            let color = Math.floor((splitTrueIndex)*360/(array.length-1));
+            let color = Math.floor((splitTrueIndex)*330/(array.length-1));
             array[i][1] = `hsl(${color}, 72%, 43%)`;
         }
         drawArray();
@@ -332,15 +345,36 @@ const quickSort = async() => {
         currentRange = unsortedRanges.pop();
         let startIndex = currentRange[0];
         let endIndex = currentRange[1];
+        if(startIndex < array.length && array[startIndex][1] == '#38a3a5') {
+            document.querySelector('.qikCode0').style.backgroundColor = '#38a3a5';
+            await sleep(speed);
+            document.querySelector('.qikCode0').style.backgroundColor = null;
+            document.querySelector('.qikCode1').style.backgroundColor = '#38a3a5';
+            await sleep(speed);
+            document.querySelector('.qikCode1').style.backgroundColor = null;
+        }
         if(endIndex - startIndex > 1) {
             let storeIndex = startIndex + 1;
             array[startIndex][1] = '#d57a2a';
+            document.querySelector('.qikCode2').style.backgroundColor = '#38a3a5';
+            document.querySelector('.qikCode3').style.backgroundColor = '#38a3a5';
+            drawArray();
+            await sleep(speed);
+            document.querySelector('.qikCode2').style.backgroundColor = null;
+            document.querySelector('.qikCode3').style.backgroundColor = null;
+            document.querySelector('.qikCode4').style.backgroundColor = '#38a3a5';
+            await sleep(speed);
+            document.querySelector('.qikCode4').style.backgroundColor = null;
             for(let i = startIndex + 1; i < endIndex; i++) {
                 array[i][1] = '#fcfbfe';
+                document.querySelector('.qikCode5').style.backgroundColor = '#38a3a5';
                 drawArray();
                 await sleep(speed);
                 array[i][1] = '#38a3a5';
-                if(array[i][0] <= array[startIndex][0]) {
+                document.querySelector('.qikCode5').style.backgroundColor = null;
+                if(array[i][0] < array[startIndex][0]) {
+                    document.querySelector('.qikCode6').style.backgroundColor = '#38a3a5';
+                    document.querySelector('.qikCode7').style.backgroundColor = '#38a3a5';
                     let temp = array[storeIndex][0];
                     array[storeIndex][0] = array[i][0];
                     array[i][0] = temp;
@@ -348,6 +382,8 @@ const quickSort = async() => {
                     array[storeIndex][1] = '#e2de1d';
                     drawArray();
                     await sleep(speed);
+                    document.querySelector('.qikCode6').style.backgroundColor = null;
+                    document.querySelector('.qikCode7').style.backgroundColor = null;
                     storeIndex++;
                 }
             }
@@ -362,10 +398,18 @@ const quickSort = async() => {
             array[startIndex][1] = '#38a3a5';
             unsortedRanges.push([storeIndex + 1, endIndex]);
             unsortedRanges.push([startIndex, storeIndex]);
+            document.querySelector('.qikCode8').style.backgroundColor = '#38a3a5';
+            document.querySelector('.qikCode9').style.backgroundColor = '#38a3a5';
+            document.querySelector('.qikCode10').style.backgroundColor = '#38a3a5';
+            drawArray();
+            await sleep(speed);
+            document.querySelector('.qikCode8').style.backgroundColor = null;
+            document.querySelector('.qikCode9').style.backgroundColor = null;
+            document.querySelector('.qikCode10').style.backgroundColor = null;
         } else if (startIndex < array.length) {
             array[startIndex][1] = '#38a34c';
             drawArray();
-            await sleep(speed);
+            // await sleep(speed);
         }
     } while(unsortedRanges.length > 0)
 
@@ -373,25 +417,44 @@ const quickSort = async() => {
 }
 
 const radixSort = async() => {
+    document.querySelector('.radCode0').style.backgroundColor = '#38a3a5';
+    await sleep(speed);
+    document.querySelector('.radCode0').style.backgroundColor = null;
+    document.querySelector('.radCode1').style.backgroundColor = '#38a3a5';
+    await sleep(speed);
+    document.querySelector('.radCode1').style.backgroundColor = null;
     // kinda cheating here cause I know none of my inputs will be more than 2 chars/digits long, and are ints
     for(let i = 0; i < 2; i++) {
         let buckets = [['0'],['33'],['67'],['100'],['133'],['167'],['200'],['233'],['267'],['300']];
+        document.querySelector('.radCode2').style.backgroundColor = '#38a3a5';
+        await sleep(speed);
+        document.querySelector('.radCode2').style.backgroundColor = null;
         for(let j = 0; j < array.length; j++) {
             let result = Math.floor((array[j][0] % Math.pow(10, i+1) / Math.pow(10, i)));
             array[j][1] = `hsl(${buckets[result][0]}, 72%, 43%)`;
             buckets[result].push(array[j]);
+            document.querySelector('.radCode3').style.backgroundColor = '#38a3a5';
             drawArray();
             await sleep(speed);
+            document.querySelector('.radCode3').style.backgroundColor = null;
         }
         let insertionIndex = 0;
+        document.querySelector('.radCode4').style.backgroundColor = '#38a3a5';
+        await sleep(speed);
+        document.querySelector('.radCode4').style.backgroundColor = null;
         for(let j = 0; j < 10; j++) {
             let currentBucket = buckets.shift();
+            document.querySelector('.radCode5').style.backgroundColor = '#38a3a5';
+            await sleep(speed);
+            document.querySelector('.radCode5').style.backgroundColor = null;
             for(let k = 1; k < currentBucket.length; k++) {
                 array.splice(array.indexOf(currentBucket[k]), 1);
                 array.splice(insertionIndex, 0, currentBucket[k]);
                 insertionIndex++;
+                document.querySelector('.radCode6').style.backgroundColor = '#38a3a5';
                 drawArray();
                 await sleep(speed);
+                document.querySelector('.radCode6').style.backgroundColor = null;
             }
         }
     }

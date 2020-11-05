@@ -63,7 +63,7 @@
         <p><b>Average Time Complexity: </b>O(n<sup>2</sup>)</p>
         <p><b>Best Time Complexity: </b>O(n) when the list is already sorted, or 1 element is at an index before its sorted location.</p>
         <p><b>Worst Time Complexity: </b>O(n<sup>2</sup>)</p>
-        <p><b>Auxilary Space: </b>O(1)</p>
+        <p><b>Space Complexity: </b>O(1)</p>
       </div>
     </div>
     <div class="mergeSort infoSection hidden">
@@ -85,10 +85,67 @@
       </div>
       <div class="description">
         <p><b>Description: </b>Merge Sort is a divide and conquer algorithm that divides an array into 2 halves, calls itself on each half, then merges the halves back together.</p>
+        <p><b>Time Complexity: </b>O(nlogn)</p>
+        <p><b>Space Complexity: </b>O(n)</p>
+      </div>
+    </div>
+    <div class="quickSort infoSection hidden">
+      <h1>Quick Sort</h1>
+      <b>Pseudocode</b>
+      <div class="pseudocode">
+        <p class="qikCode0">function quickSort(start, end)</p>
+        <p class="qikCode1">&nbsp;&nbsp;if(end - start > 1)</p>
+        <p class="qikCode2">&nbsp;&nbsp;&nbsp;&nbsp;pivot = input[start]</p>
+        <p class="qikCode3">&nbsp;&nbsp;&nbsp;&nbsp;swapIndex = start + 1</p>
+        <p class="qikCode4">&nbsp;&nbsp;&nbsp;&nbsp;for(start + 1 to end)</p>
+        <p class="qikCode5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(currentElement < pivot)</p>
+        <p class="qikCode6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap(currentElement, swapIndex)</p>
+        <p class="qikCode7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swapIndex++;</p>
+        <p class="qikCode8">&nbsp;&nbsp;&nbsp;&nbsp;swap(start, swapIndex - 1)</p>
+        <p class="qikCode9">&nbsp;&nbsp;&nbsp;&nbsp;quickSort(start, swapIndex - 1)</p>
+        <p class="qikCode10">&nbsp;&nbsp;&nbsp;&nbsp;quickSort(swapIndex, end)</p>
+      </div>
+      <div class="description">
+        <p><b>Description: </b>Quick Sort is a divide and conquer algorithm that picks a pivot element and puts it at the correct position by putting all elements less than it before it. This is repeated until the array is sorted.</p>
         <p><b>Average Time Complexity: </b>O(nlogn)</p>
-        <p><b>Best Time Complexity: </b>O(nlogn)</p>
-        <p><b>Worst Time Complexity: </b>O(nlogn)</p>
-        <p><b>Auxilary Space: </b>O(n)</p>
+        <p><b>Best Time Complexity: </b>O(nlogn) when the selected pivot is always the median element.</p>
+        <p><b>Worst Time Complexity: </b>O(n<sup>2</sup>) when the selected pivot is always the largest or smallest unsorted element.</p>
+        <p><b>Space Complexity: </b>O(logn)</p>
+      </div>
+    </div>
+    <div class="radixSort infoSection hidden">
+      <h1>Radix Sort</h1>
+      <b>Pseudocode</b>
+      <div class="pseudocode">
+        <p class="radCode0">create queues for each radix</p>
+        <p class="radCode1">for each significant digit</p>
+        <p class="radCode2">&nbsp;&nbsp;for each element in input[]</p>
+        <p class="radCode3">&nbsp;&nbsp;&nbsp;&nbsp;sort element into respective queue</p>
+        <p class="radCode4">&nbsp;&nbsp;for each queue</p>
+        <p class="radCode5">&nbsp;&nbsp;&nbsp;&nbsp;while queue length > 0</p>
+        <p class="radCode6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push first queue element to input</p>
+      </div>
+      <div class="description">
+        <p><b>Description: </b>Radix Sort is a non-comparative sorting algorithm that sorts elements by radix by grouping elements if they share the same digit at the same significant digit position. This process is repeated for each digit from least significant to most significant digit.</p>
+        <p><b>Time Complexity: </b>O(d*(n+b)) where b is the base for representing numbers, and d is log<sub>b</sub>(maxValue). Put simply, b is the number of radixes (in the decimal system this would be 10), and d is the length of the longest element.</p>
+        <p><b>Space Complexity: </b>O(n+b) where b is the base for representing numbers.</p>
+      </div>
+    </div>
+    <div class="selectionSort infoSection">
+      <h1>Selection Sort</h1>
+      <b>Pseudocode</b>
+      <div class="pseudocode">
+        <p class="selCode0">for(0 to input[] length - 1)</p>
+        <p class="selCode1">&nbsp;&nbsp;minimum = input[0]</p>
+        <p class="selCode2">&nbsp;&nbsp;for each unsorted element</p>
+        <p class="selCode3">&nbsp;&nbsp;&nbsp;&nbsp;if(element < minimum)</p>
+        <p class="selCode4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minimum = element</p>
+        <p class="selCode5">&nbsp;&nbsp;swap(minimum, first unsorted element)</p>
+      </div>
+      <div class="description">
+        <p><b>Description: </b>Selection Sort is a simple sorting algorithm that repeatedly finds the minimum element, and swaps it with the first unsorted element, and marks it as sorted</p>
+        <p><b>Time Complexity: </b>O(n<sup>2</sup>)</p>
+        <p><b>Space Complexity: </b>O(1)</p>
       </div>
     </div>
   </section>

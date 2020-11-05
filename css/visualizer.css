@@ -139,6 +139,7 @@ ul {
   justify-content: space-around;
   align-items: center;
   z-index: 1;
+  font-size: .8rem;
 }
 
 .controlItem {
@@ -148,10 +149,10 @@ ul {
 }
 
 .slider {
-  margin: .1rem 1rem 0 1rem;
+  margin: .1rem .5rem 0 .5rem;
   -webkit-appearance: none;
-  width: 50%;
-  height: 10px;
+  width: 100%;
+  height: .5rem;
   border-radius: 5px;
   background: #f3f7f7;
   outline: none;
@@ -162,16 +163,16 @@ ul {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 17px;
-  height: 17px;
+  width: .8rem;
+  height: .8rem;
   border-radius: 50%;
   background: #38a3a5;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 17px;
-  height: 17px;
+  width: .8rem;
+  height: .8rem;
   border-radius: 50%;
   background: #38a3a5;
   cursor: pointer;
@@ -208,7 +209,7 @@ ul {
 .info {
   height: 100%;
   width: 35%;
-  padding: 1rem;
+  padding: .7rem 1rem;
   font-size: .7rem;
   background-color:#879797;
 }
@@ -233,6 +234,10 @@ ul {
 .pseudocode p {
   font-family: 'Roboto Mono', sans-serif;
   padding-left: .5rem;
+}
+
+sub, sup {
+  line-height: 0;
 }
 
 .description p {
