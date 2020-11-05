@@ -4,7 +4,7 @@ const sizeSlider  = document.querySelector('#sizeRange');
 const playButton = document.querySelector('.start');
 const expandButton = document.querySelector('.expand');
 let size = sizeSlider.value;
-let speed = 1001-100*speedSlider.value;
+let speed = 1001-10*speedSlider.value;
 let array = [];
 let selectedAlgo;
 let reset;
@@ -46,7 +46,7 @@ playButton.addEventListener('click', () => {
                 selectionSort();
                 break;
             default:
-                mergeSort();
+                radixSort();
         }
     }
 })
@@ -104,7 +104,7 @@ document.querySelectorAll('.algo').forEach(link => {
 })
 
 speedSlider.addEventListener('change', () => {
-    speed = 1001-100*speedSlider.value;
+    speed = 1001-10*speedSlider.value;
 })
 
 sizeSlider.addEventListener('change', () => {

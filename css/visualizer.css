@@ -24,7 +24,19 @@ nav {
 }
 
 .logo {
-  padding: 0 3rem;
+  padding: .2rem .5rem 0 3rem;
+}
+
+nav svg{
+  fill: #f3f7f7;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.logoText {
+  font-family: 'Palanquin', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .menu {

@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="../resources/logo.svg">
   <!-- Fonts -->
+  <!-- Palanquin -->
+  <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@400;600;700&display=swap" rel="stylesheet"> 
   <!-- Roboto Mono -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
   <!-- CSS -->
@@ -12,7 +15,30 @@
 </head>
 <body>
   <nav>
-    <div class="logo">Sorting Visualizer</div>
+    <div class="logo">
+      <svg width="50" height="50" version="1.1" viewBox="0 0 92.604 92.604" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+        <metadata>
+         <rdf:RDF>
+          <cc:Work rdf:about="">
+           <dc:format>image/svg+xml</dc:format>
+           <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+           <dc:title/>
+          </cc:Work>
+         </rdf:RDF>
+        </metadata>
+        <g>
+         <rect transform="scale(-1,1)" x="-92.604" y="4.307e-7" width="13.229" height="92.604" opacity=".998" stroke-width="2.5488"/>
+         <rect transform="scale(-1,1)" x="-60.854" y="36.237" width="13.229" height="56.367" opacity=".998" stroke-width="1.9886"/>
+         <rect transform="scale(-1,1)" x="-76.729" y="20.929" width="13.229" height="71.675" opacity=".998" stroke-width="2.2424"/>
+         <rect transform="scale(-1,1)" x="-44.979" y="42.755" width="13.229" height="49.849" opacity=".998" stroke-width="1.8701"/>
+         <rect transform="scale(-1,1)" x="-13.229" y="56.313" width="13.229" height="36.291" opacity=".998" stroke-width="1.5956"/>
+         <rect transform="scale(-1,1)" x="-29.104" y="42.755" width="13.229" height="49.849" opacity=".998" stroke-width="1.8701"/>
+         <rect transform="scale(-1,1)" x="-54.052" y="4.307e-7" width="54.052" height="13.229" opacity=".998" stroke-width="1.6657"/>
+         <path d="m72.76 0-29.934 29.935-9.3545-9.3545 20.58-20.58z" opacity=".998" stroke-width="1.4741"/>
+        </g>
+       </svg>
+    </div>
+    <div class="logoText">Sorting Visualizer</div>
   </nav>
   <div class="mainContent">
   <section class="display">
@@ -40,7 +66,7 @@
       </div>
       <div class="speed controlItem">
         <p>slow</p>
-        <input type="range" min = "0" max = "10" value = "10" class = "slider" id="speedRange">
+        <input type="range" min = "0" max = "100" value = "80" class = "slider" id="speedRange">
         <p>fast</p>
       </div>
     </div>
@@ -66,7 +92,7 @@
         <p><b>Space Complexity: </b>O(1)</p>
       </div>
     </div>
-    <div class="mergeSort infoSection">
+    <div class="mergeSort infoSection hidden">
       <h1>Merge Sort</h1>
       <b>Pseudocode</b>
       <div class="pseudocode">
@@ -113,7 +139,7 @@
         <p><b>Space Complexity: </b>O(logn)</p>
       </div>
     </div>
-    <div class="radixSort infoSection hidden">
+    <div class="radixSort infoSection">
       <h1>Radix Sort</h1>
       <b>Pseudocode</b>
       <div class="pseudocode">
